@@ -9,8 +9,8 @@ export default function App() {
       base={import.meta.env.SERVER_BASE_URL}
       root={props => (
         <main>
-          <a href="/">Index</a>
-          <a href="/about">About</a>
+          <a href={`${import.meta.env.SERVER_BASE_URL}`}>Index</a>
+          <a href={`${import.meta.env.SERVER_BASE_URL}/about`}>About</a>
           <Suspense>{props.children}</Suspense>
         </main>
       )}
