@@ -7,7 +7,8 @@ import { getPostList } from "./scripts/utils";
 
 
 const postList = getPostList()
-console.log("Post List:", postList);
+console.log("Post List: ", postList);
+console.log("Base Path: ", process.env.BASE_PATH)
 
 export default defineConfig({
   extensions: ["mdx", "md"],
