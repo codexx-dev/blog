@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "dev": "vinxi dev",
-    "dev:static": "http-server .output/public",
+    "preview": "http-server .output/public --port 3000",
     "build": "vinxi build && node scripts/fix-404.js",
     "start": "vinxi start"
   },
@@ -11,9 +11,11 @@
     "@mdx-js/mdx": "^2.3.0",
     "@solidjs/router": "^0.15.0",
     "@solidjs/start": "^1.1.0",
+    "@tailwindcss/vite": "^4.1.11",
     "@vinxi/plugin-mdx": "^3.7.1",
     "solid-js": "^1.9.5",
     "solid-mdx": "^0.0.7",
+    "tailwindcss": "^4.1.11",
     "vinxi": "^0.5.7"
   },
   "engines": {

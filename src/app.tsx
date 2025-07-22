@@ -1,16 +1,19 @@
 import { Router } from "@solidjs/router";
 import { FileRoutes } from "@solidjs/start/router";
 import { Suspense } from "solid-js";
+import Tab from "./components/Tab";
+
 import "./app.css";
+
+export const baseURL = import.meta.env.SERVER_BASE_URL;
 
 export default function App() {
   return (
     <Router
-      base={import.meta.env.SERVER_BASE_URL}
+      base={baseURL}
       root={props => (
         <main>
-          <a href={`${import.meta.env.SERVER_BASE_URL}`}>Index</a>
-          <a href={`${import.meta.env.SERVER_BASE_URL}/about`}>About</a>
+          <Tab/>
           <Suspense>{props.children}</Suspense>
         </main>
       )}

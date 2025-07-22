@@ -1,11 +1,24 @@
-import { createSignal } from "solid-js";
-import "./Counter.css";
+import { createSignal, For, JSX } from "solid-js";
+
+const [count, setCount] = createSignal(0);
 
 export default function Counter() {
-  const [count, setCount] = createSignal(0);
+  
+  const clickHandle = () => {
+    setCount(count() + 1);
+  };
+
   return (
-    <button class="increment" onClick={() => setCount(count() + 1)} type="button">
-      Clicks: {count()}
-    </button>
+    <div>
+      <button class="btn" onClick={clickHandle}>
+        Clicks: {count()}
+      </button>
+      <div>
+        <For each={Array.from({ length: count() })}>
+          {(_, i) => <img src="/cat-spinning.gif" class="w-40 inline-block"/>}
+        </For>
+      </div>
+    </div>
+
   );
 }
